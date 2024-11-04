@@ -18,7 +18,7 @@ function App() {
   }
   async function fetchImageFromAPI() {
     // const url = `https://api.unsplash.com/search/photos?page=1&query=${search}&client_id=${key}&per_page=15`;
-    const url = `${import.meta.env.VITE_API_URL}?page=1&query=${search}&client_id=${import.meta.env.VITE_API_KEY}&per_page=15`;
+    const url = `${import.meta.env.VITE_API_URL}?page=1&query=${search}&client_id=${import.meta.env.VITE_API_KEY}&per_page=18`;
     const res = await fetch(url);
     const data = await res.json()
     const result= data.results
@@ -31,7 +31,7 @@ function App() {
     }
   }
   return (
-    <>
+    <div>
       <h1>ระบบค้นหารูปภาพด้วย API</h1>
       <form onSubmit={checkSearch}>
         <input
@@ -47,7 +47,7 @@ function App() {
         return <Picture key={index} {...data}/>
       })}
       </div>
-    </>
+    </div>
   );
 }
 
